@@ -1,5 +1,5 @@
 # evernote-url2clip
-Clip webpages to Evernote from a text file. Using this file I automatically clipped hundreds of webpages from Chrome and Pocket. The only thing I couldn't automate is enabling shortcuts for Web Clipper extension (see #demo).
+Clip webpages to Evernote from a text file. Using this file I automatically clipped hundreds of webpages from Chrome and Pocket. The only thing I couldn't automate is enabling shortcuts for Web Clipper extension (see [demo](#demo)).
 
 ## Demo
 ![](img/demo.gif)
