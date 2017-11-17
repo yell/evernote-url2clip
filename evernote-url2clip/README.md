@@ -19,6 +19,26 @@ and make sure its location is added to PATH (or copy to `/usr/bin/` or `/usr/loc
 
 * I tested program using extension (`.crx`) provided in the current directory. Downloaded from https://chrome-extension-downloader.com by typing its ID (go `chrome://extensions/`, check Developer mode, and find out ID).
 
+## How to run
+* Fill `config.yml` file with evernote credentials.
+* Run program:
+```bash
+usage: evernote_url2clip.py [-h] [--clip-type TYPE] [--clip-timeout SEC]
+                            FILEPATH
+
+positional arguments:
+  FILEPATH            file path with urls
+
+optional arguments:
+  -h, --help          show this help message and exit
+  --clip-type TYPE    how to clip content: 'A' - article, 'B' - bookmark, 'C'
+                      - simplified article, 'E' - email, 'F' - full page, 'M'
+                      - screenshot, 'P' - pdf, ... [see extension for more]
+                      (default: A)
+  --clip-timeout SEC  default timeout (in seconds) to clip pages (default:
+                      120)
+```
+
 ## How to migrate from Chrome (bookmarks)
 Simply select and copy-paste links from Chrome bookmark manager to a text file.
 
