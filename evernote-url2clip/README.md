@@ -1,20 +1,23 @@
 # evernote-url2clip
-Clip webpages to Evernote from a text file. Using this file I automatically clipped hundreds of webpages from Chrome and Pocket. The only thing I couldn't automate is enabling shortcuts for Web Clipper extension (see [demo](#demo)).
+Clip webpages to Evernote from a text file. Using this program I successfully clipped hundreds of webpages from Chrome and Pocket automatically. The only thing I couldn't automate is enabling shortcuts for Web Clipper extension (see [demo](#demo)). Tested on Ubuntu 16.04 and Chrome. With minimal changes this should also work on Windows.
 
 ## Demo
 ![](img/demo.gif)
 
 ## How to install
-
-Install dependencies
+* Download source
+```bash
+git clone https://github.com/monsta-hd/scripts
+cd scripts/evernote-url2clip/
+```
+* Install dependencies
 ```bash
 pip install -r requirements.txt
 ```
-Download driver for Chrome [here](https://sites.google.com/a/chromium.org/chromedriver/downloads)
+* Download driver for Chrome [here](https://sites.google.com/a/chromium.org/chromedriver/downloads)
 and make sure its location is added to PATH (or copy to `/usr/bin/` or `/usr/local/bin/`)
 
-Next download Evernote Clip extension by typing its ID (go `chrome://extensions/`, check Developer mode, and find out ID)
-https://chrome-extension-downloader.com and put in current directory.
+* I tested program using extension (`.crx`) provided in the current directory. Downloaded from https://chrome-extension-downloader.com by typing its ID (go `chrome://extensions/`, check Developer mode, and find out ID).
 
 ## How to migrate from Chrome (bookmarks)
 Simply select and copy-paste links from Chrome bookmark manager to a text file.
