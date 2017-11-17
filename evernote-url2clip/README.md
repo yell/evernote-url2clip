@@ -1,3 +1,9 @@
+# evernote-url2clip
+Clip webpages to Evernote from a text file. Using this file I automatically clipped hundreds of webpages from Chrome and Pocket. The only thing I couldn't automate is enabling shortcuts for Web Clipper extension (see #demo).
+
+## Demo
+![](img/demo.gif)
+
 ## How to install
 
 Install dependencies
@@ -11,13 +17,14 @@ Next download Evernote Clip extension by typing its ID (go `chrome://extensions/
 https://chrome-extension-downloader.com and put in current directory.
 
 ## How to migrate from Chrome (bookmarks)
+Simply select and copy-paste links from Chrome bookmark manager to a text file.
 
 ## How to migrate from Pocket
 Go to
 ```
 Settings > Export > Export to HTML file
 ```
-download `fil_export.html` after that run (install `lynx`)
+download HTML file (`fil_export.html` by default) and run (install `lynx`)
 ```bash
 lynx -dump fil_export.html | awk '/http/{print $2}' > links.txt
 ```
