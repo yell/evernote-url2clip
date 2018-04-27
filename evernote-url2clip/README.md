@@ -18,7 +18,7 @@ pip install -r requirements.txt
 * Download driver for Chrome [here](https://sites.google.com/a/chromium.org/chromedriver/downloads)
 and make sure its location is added to PATH (or copy to `/usr/bin/` or `/usr/local/bin/`)
 
-* I tested program using extension (`.crx`) provided in the current directory. Downloaded from https://chrome-extension-downloader.com by typing its ID (go `chrome://extensions/`, check Developer mode, and find out ID).
+* I tested program using extension (`.crx`) provided in the current directory. Also you can download newer one from https://chrome-extension-downloader.com by typing its ID (go `chrome://extensions/`, check Developer mode, and find out ID) and put in the root directory of this project.
 
 ### Windows (tested on Windows 8.1, Anaconda 4.4.11)
 * Download source (e.g. as zip and unzip somewhere)
