@@ -5,6 +5,7 @@ Clip webpages to Evernote from a text file. Using this program I successfully cl
 ![](img/demo.gif)
 
 ## How to install
+### Linux (tested on Ubuntu 16.04, Python 2.7.12)
 * Download source
 ```bash
 git clone https://github.com/monsta-hd/scripts
@@ -18,6 +19,22 @@ pip install -r requirements.txt
 and make sure its location is added to PATH (or copy to `/usr/bin/` or `/usr/local/bin/`)
 
 * I tested program using extension (`.crx`) provided in the current directory. Downloaded from https://chrome-extension-downloader.com by typing its ID (go `chrome://extensions/`, check Developer mode, and find out ID).
+
+### Windows (tested on Windows 8.1, Anaconda 4.4.11)
+* Download source (e.g. as zip and unzip somewhere)
+* Download and install [Anaconda](https://www.anaconda.com/download/#windows)
+* Version can be checked from Anaconda prompt:
+```bash
+conda -V
+# conda 4.4.11
+```
+* Run Anaconda prompt and explicitly install requirements (note that tildes such as `selenium~=3.9.0` does not work with `conda install`):
+```bash
+conda install selenium=3.9.0
+conda install tqdm=4.14.0
+```
+* Download [chrome driver](https://sites.google.com/a/chromium.org/chromedriver/downloads) and unzip it to `X:/Windows/System32`
+* Run script in conda prompt by navigating to root folder of the project and use directions from the next section
 
 ## How to run
 * Fill `config.yml` file with evernote credentials.
