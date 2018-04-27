@@ -8,10 +8,11 @@ import argparse
 import selenium.common
 import selenium.webdriver.support.ui as ui
 import numpy as np
+from tqdm import tqdm
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.keys import Keys
-from tqdm import tqdm
+from selenium.webdriver.common.alert import Alert
 
 
 def send_keys(browser, keys):
@@ -88,11 +89,24 @@ def main(urls, args):
             send_keys(browser, '`')
 
             # close alerts if they still pop-up
-            time.sleep(2)
-            try:
-                browser.switch_to.alert.accept()
-            except selenium.common.exceptions.NoAlertPresentException:
-                pass
+            was_alert = False
+            for _ in xrange(10):
+                try:
+                    time.sleep(0.5)
+                    browser.switch_to.alert.accept()
+                    alert = Alert(browser)
+                    alert.accept()
+                except selenium.common.exceptions.UnexpectedAlertPresentException:
+                    was_alert = True
+                    browser.switch_to.alert.accept()
+                    alert = Alert(browser)
+                    alert.accept()
+                except selenium.common.exceptions.NoAlertPresentException:
+                    pass
+                else:
+                    if was_alert:
+                        break
+
             time.sleep(1)
 
             # choose desired clip type
@@ -125,7 +139,11 @@ def main(urls, args):
             # confirm stuff
             send_keys(browser, Keys.ENTER)
         
+        except selenium.common.exceptions.UnexpectedAlertPresentException:
+            pass
+
         except Exception as e:
+            print type(e)
             msg = '\nError with [{0}/{1}]:\n'.format(i + 1, len(urls))
             msg += str(e)
             print msg
