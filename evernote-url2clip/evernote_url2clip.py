@@ -21,7 +21,7 @@ def send_keys(browser, keys):
 
 def main(urls, args):
     # load config
-    with open('config.yml') as f:
+    with open(args.config) as f:
         config = yaml.load(f)
 
     # add clipper extension
@@ -158,11 +158,13 @@ if __name__ == '__main__':
     parser.add_argument('fpath', type=str, metavar='FILEPATH',
                         help='file path with urls')
     parser.add_argument('--clip-type', type=str, default='A', metavar='TYPE',
-                        help="how to clip content: 'A' - article, 'B' - bookmark, " + \
-                             "'C' - simplified article, 'E' - email, 'F' - full page, " + \
+                        help="how to clip content: 'A' - article, 'B' - bookmark, "
+                             "'C' - simplified article, 'E' - email, 'F' - full page, "
                              "'M' - screenshot, 'P' - pdf, ... [see extension for more]")
     parser.add_argument('--clip-timeout', type=float, default=120, metavar='SEC',
                         help='default timeout (in seconds) to clip pages')
+    parser.add_argument('--config', type=str, default='config.yml', metavar='PATH',
+                        help='path to config file')
     args = parser.parse_args()
 
     # load urls from file
