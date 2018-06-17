@@ -26,9 +26,7 @@ def main(urls, args):
 
     # add clipper extension
     chrome_options = Options()
-    extensions = filter(lambda s: s.endswith('.crx'), os.listdir('.'))
-    assert len(extensions) >= 1
-    chrome_options.add_extension(extensions[0])
+    chrome_options.add_extension(args.extension)
     
     # disable browser notifications
     prefs = {'profile.default_content_setting_values.notifications': 2}
@@ -155,20 +153,22 @@ def main(urls, args):
 if __name__ == '__main__':
     # parse arguments
     parser = argparse.ArgumentParser(formatter_class=argparse.ArgumentDefaultsHelpFormatter)
-    parser.add_argument('fpath', type=str, metavar='FILEPATH',
+    parser.add_argument('urls', type=str,
                         help='file path with urls')
-    parser.add_argument('--clip-type', type=str, default='A', metavar='TYPE',
+    parser.add_argument('--clip-type', type=str, default='A',
                         help="how to clip content: 'A' - article, 'B' - bookmark, "
                              "'C' - simplified article, 'E' - email, 'F' - full page, "
                              "'M' - screenshot, 'P' - pdf, ... [see extension for more]")
-    parser.add_argument('--clip-timeout', type=float, default=120, metavar='SEC',
+    parser.add_argument('--clip-timeout', type=float, default=120,
                         help='default timeout (in seconds) to clip pages')
-    parser.add_argument('--config', type=str, default='config.yml', metavar='PATH',
+    parser.add_argument('--config', type=str, default='config.yml',
                         help='path to config file')
+    parser.add_argument('--extension', type=str, default='Evernote-Web-Clipper_v6.13.crx',
+                        help='path to evernote clipper chrome extension')
     args = parser.parse_args()
 
     # load urls from file
-    with open(args.fpath) as f:
+    with open(args.urls) as f:
         urls = f.readlines()
     urls = [s.strip() for s in urls]
 
