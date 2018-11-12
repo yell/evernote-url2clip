@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+first_page=$1
+last_page=$2
+filepath=$3
+filepath_without_ext="${filepath%.*}"
+
+pdfseparate -f ${first_page} -l ${last_page} ${filepath} __tmp_page%d.pdf
+pdfunite __tmp_page* "${filepath_without_ext}_pages_${first_page}_${last_page}.pdf"
+rm __tmp_page*

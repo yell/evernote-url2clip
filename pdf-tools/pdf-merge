@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+pdfunite $* merged.pdf
