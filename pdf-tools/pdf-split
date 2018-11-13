@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+chunk_size=$1
+filepath=$2
+
+n_pages=$(pdf-pages "$2")
+n_chunks=$(( n_pages / chunk_size + (n_pages % chunk_size > 0) ))
+filepath_without_ext="${filepath%.*}"
+
+start_page=1
+num_chunk=1
+while [[ ${start_page} -le ${n_pages} ]];
+do
+    end_page=$(( start_page + chunk_size - 1 ))
+    end_page=$(( end_page > n_pages ? n_pages : end_page ))
+    
+    pdf-extract ${start_page} ${end_page} "${filepath}" "${filepath_without_ext}_part_${num_chunk}_${n_chunks}_pages_${start_page}_${end_page}.pdf"
+    
+    start_page=$(( start_page + chunk_size ))
+    num_chunk=$(( num_chunk + 1 ))
+done
