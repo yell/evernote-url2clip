@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-pdfinfo $1 | grep Pages: | awk '{print $NF}'
+pdfinfo $1 | grep Pages: | awk '{print $2}'
