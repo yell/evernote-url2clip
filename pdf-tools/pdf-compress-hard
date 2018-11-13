@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+filepath=$1
+filepath_without_ext="${filepath%.*}"
+
+ps2pdf -dPDFSETTINGS=/ebook "${filepath}" "${filepath_without_ext}_compressed.pdf"
