@@ -4,6 +4,9 @@ last_page=$2
 filepath=$3
 filepath_without_ext="${filepath%.*}"
 
+out_filepath="${filepath_without_ext}_pages_${first_page}_${last_page}.pdf"
+[[ -z $4 ]] || out_filepath=$4
+
 pdfseparate -f ${first_page} -l ${last_page} "${filepath}" "__tmp_page%05d.pdf"
-pdfunite __tmp_page* "${filepath_without_ext}_pages_${first_page}_${last_page}.pdf"
+pdfunite __tmp_page* "${out_filepath}"
 rm __tmp_page*
