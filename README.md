@@ -1,4 +1,4 @@
-# scripts
+# tools
 ## How to add scripts to PATH
 Add all scripts to PATH by running
 ```bash
