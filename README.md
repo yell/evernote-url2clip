@@ -1,10 +1,9 @@
 # tools
-## How to add scripts to PATH
-Add all scripts to PATH by running
+## Install
 ```bash
+# Add all tools to PATH
 make
-```
-**or** add a specific script to PATH by running the corresponding makefile
-```bash
-cd <SCRIPT FOLDER> && make && cd ..
+
+# OR add a specific tool to PATH by running the corresponding makefile
+cd <TOOL FOLDER> && make && cd ..
 ```
