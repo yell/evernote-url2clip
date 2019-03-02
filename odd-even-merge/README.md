@@ -1,6 +1,7 @@
 # odd-even-merge
+Merge files from two directories in alternating manner.
 
-Usage:
+## Usage
 ```bash
 $ python odd_even_merge.py -h
 usage: odd_even_merge.py [-h] [-o DIRPATH] [-e DIRPATH] [-d DIRPATH]
