@@ -1,5 +1,9 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+"""
+Merge files from two directories in alternating manner.
+"""
+
 import os
 import argparse
 from shutil import copy
