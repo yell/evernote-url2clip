@@ -42,7 +42,7 @@ conda install tqdm=4.14.0
 * Run script in conda prompt by navigating to root folder of the project and use directions from the next section
 
 ## How to run
-* Fill `config.yml` file with evernote credentials.
+* Copy and fill `config.yaml.example` file with Evernote credentials.
 * Run program:
 ```bash
 usage: evernote_url2clip.py [-h] [--clip-type TYPE] [--clip-timeout SEC]
