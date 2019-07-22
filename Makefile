@@ -1,8 +1,6 @@
-TARGETS = $(shell find . -mindepth 2 -maxdepth 2 -name '?akefile' -printf "%h\n" | sort -u)
+all: 
+	cp evernote_url2clip.py evernote-url2clip
+	chmod a+x evernote-url2clip
+	sudo mv evernote-url2clip /usr/local/bin/
 
-all: $(TARGETS)
-
-$(TARGETS):
-	cd $@ && make
-
-.PHONY: all $(TARGETS)
+.PHONY: all

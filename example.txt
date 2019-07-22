@@ -1,0 +1,2 @@
+http://multithreaded.stitchfix.com/blog/2016/04/21/forget-arima/
+https://theintelligenceofinformation.wordpress.com/2017/01/20/quantum-boltzman-machines-for-deep-reinforcement-learning/
