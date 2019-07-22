@@ -20,6 +20,11 @@ and make sure its location is added to PATH (or copy to `/usr/bin/` or `/usr/loc
 
 * I tested program using extension (`.crx`) provided in the current directory. Also you can download newer one from https://chrome-extension-downloader.com by typing its ID (go `chrome://extensions/`, check Developer mode, and find out ID) and put in the root directory of this project.
 
+* You can also add the script to PATH by running
+```bash
+make install
+```
+
 ### Windows (tested on Windows 8.1, Anaconda 4.4.11)
 * Download source (e.g. as zip and unzip somewhere)
 * Download and install [Anaconda](https://www.anaconda.com/download/#windows)
